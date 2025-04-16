@@ -58,11 +58,11 @@
     .shortcuts {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
+      gap: 10px;
       max-width: 600px;
       margin: 30px auto;
       text-align: center;
-      padding-top: 1cm;
+      padding-top: 1cm; /* Khoảng cách giữa tìm kiếm và shortcut */
     }
 
     .shortcuts a {
@@ -77,18 +77,11 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      height: 60px; /* Đảm bảo kích thước shortcut */
     }
 
     .shortcuts a:hover {
       background: rgba(255, 255, 255, 0.2);
       transform: scale(1.1);
-    }
-
-    .shortcut-logo {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
     }
   </style>
 </head>
@@ -107,33 +100,15 @@
   </div>
 
   <div class="shortcuts">
-    <a href="https://facebook.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="shortcut-logo" alt="Facebook Logo">Facebook
-    </a>
-    <a href="https://twitter.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" class="shortcut-logo" alt="Twitter Logo">Twitter
-    </a>
-    <a href="https://www.tiktok.com/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/TikTok_logo_2021.svg" class="shortcut-logo" alt="Tiktok Logo">Tiktok
-    </a>
-    <a href="https://chat.openai.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/OpenAI_Logo.svg" class="shortcut-logo" alt="ChatGPT Logo">ChatGPT
-    </a>
-    <a href="https://discord.com/channels/@me" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Discord_logo_2021.svg" class="shortcut-logo" alt="Discord Logo">Discord
-    </a>
-    <a href="https://mail.google.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_Gmail_logo_2020.svg" class="shortcut-logo" alt="Gmail Logo">Gmail
-    </a>
-    <a href="https://drive.google.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Google_Drive_logo_2020.svg" class="shortcut-logo" alt="Google Drive Logo">Google Drive
-    </a>
-    <a href="https://web.telegram.org/a/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Telegram_Logo.svg" class="shortcut-logo" alt="Telegram Logo">Telegram
-    </a>
-    <a href="https://youtube.com" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/YouTube_logo_2015.svg" class="shortcut-logo" alt="YouTube Logo">YouTube
-    </a>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
+    <a href="https://www.tiktok.com/" target="_blank">Tiktok</a>
+    <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
+    <a href="https://discord.com/channels/@me" target="_blank">Discord</a>
+    <a href="https://mail.google.com" target="_blank">Gmail</a>
+    <a href="https://drive.google.com" target="_blank">Google Drive</a>
+    <a href="https://web.telegram.org/a/" target="_blank">Telegram</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
   </div>
 
   <script>
