@@ -40,29 +40,13 @@
       font-size: 10px;
     }
 
-    .search-bar {
-      display: flex;
-      justify-content: center;
-      margin-top: 16cm; /* Dời xuống thêm 3cm */
-    }
-
-    .search-bar input {
-      width: 30%;
-      padding: 8px 12px;
-      font-size: 12px;
-      border-radius: 20px;
-      border: none;
-      box-shadow: 0 0 5px #000;
-    }
-
     .shortcuts {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 10px;
       max-width: 600px;
-      margin: 30px auto;
+      margin: 5cm auto 30px;
       text-align: center;
-      padding-top: 1cm; /* Khoảng cách giữa tìm kiếm và shortcut */
     }
 
     .shortcuts a {
@@ -93,10 +77,6 @@
       <div id="date">Thứ 4, ngày 16 tháng 4 năm 2025</div>
       <div id="clock">00:00:00</div>
     </div>
-  </div>
-
-  <div class="search-bar">
-    <input type="text" placeholder="Tìm kiếm..." onkeydown="if(event.key === 'Enter'){window.location='https://www.google.com/search?q=' + this.value;}">
   </div>
 
   <div class="shortcuts">
