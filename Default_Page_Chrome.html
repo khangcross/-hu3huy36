@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>New Tab | Chrome</title>
   <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'VT323', monospace;
       background: url("https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/1302820.jpg") center/cover no-repeat fixed;
       color: white;
     }
@@ -16,93 +16,117 @@
     .top-bar {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center; /* Đã sửa: Căn giữa theo chiều dọc để không bị khuất chữ */
       padding: 20px 30px 0;
-      font-size: 10px;
     }
 
-    /* Khu vực gộp chữ Xin chào và GIF nằm cạnh nhau */
+    /* Chia tỉ lệ 3 phần bằng nhau để đẩy khung giờ ra chính giữa */
+    .top-left, .top-center, .top-right {
+      flex: 1;
+    }
+
+    /* Khu vực gộp chữ Xin chào và cụm GIF bộ ba Chiikawa */
     .greeting-container {
       display: flex;
       align-items: center;
-      gap: 10px; /* Khoảng cách giữa chữ và GIF */
+      gap: 8px;
     }
 
     .greeting {
+      font-size: 22px; /* Tăng size phù hợp với font mới */
       text-shadow: 2px 2px 3px #000;
+      white-space: nowrap;
     }
 
-    /* Thêm hiệu ứng cho ảnh GIF cạnh chữ xin chào */
     .greeting-gif {
-      width: 25px; /* Chiều cao nhỏ gọn vừa vặn với cỡ chữ */
+      width: 32px; 
       height: auto;
     }
 
-    .right-info {
-      text-align: right;
+    /* Đưa thông tin ngày giờ ra giữa */
+    .top-center {
+      text-align: center;
       text-shadow: 2px 2px 3px #000;
-      line-height: 1.5;
+      line-height: 1.3;
     }
 
     #date {
-      margin-bottom: 5px;
-      font-size: 8px;
+      margin-bottom: 2px;
+      font-size: 20px;
+      color: #e0e0e0;
     }
 
     #clock {
-      font-size: 10px;
+      font-size: 32px; /* Đồng hồ to rõ ràng ở chính giữa */
+      color: #00ffcc; 
+    }
+
+    /* Khu vực thời tiết ở góc phải cũ */
+    .top-right {
+      text-align: right;
+      text-shadow: 2px 2px 3px #000;
+    }
+
+    #weather {
+      font-size: 22px;
+      color: #ffcc66;
     }
 
     /* Giữ nguyên vị trí layout shortcuts ban đầu của bạn */
     .shortcuts {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      max-width: 600px;
+      gap: 12px;
+      max-width: 650px;
       margin: 30px auto;
       text-align: center;
-      padding-top: 16cm; /* Giữ nguyên khoảng cách đẩy xuống như cũ */
+      padding-top: 16cm; 
     }
 
-    /* Làm mới các ô a để nhìn rõ ràng, dễ đọc hơn */
+    /* Làm mới các ô chứa link cho sắc nét và đổi font */
     .shortcuts a {
       text-decoration: none;
       color: white;
-      background: rgba(0, 0, 0, 0.7); /* Tăng độ tối nền để chữ nổi lên rõ hơn */
-      border: 1px solid rgba(255, 255, 255, 0.25); /* Thêm viền mảnh giúp định hình ô */
-      padding: 15px 5px;
+      background: rgba(0, 0, 0, 0.72); 
+      border: 1px solid rgba(255, 255, 255, 0.25); 
+      padding: 12px 5px;
       border-radius: 8px;
-      font-size: 9px; /* Tinh chỉnh nhẹ cỡ chữ cho vừa vặn */
-      transition: 0.3s;
+      font-size: 18px; /* Kích cỡ chữ vừa mắt với font VT323 */
+      transition: 0.25s;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      text-shadow: 1px 1px 2px #000; /* Đổ bóng chữ giúp không bị lóa vào nền ảnh */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ nhẹ dưới ô */
+      text-shadow: 1px 1px 2px #000; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
     }
 
-    /* Hiệu ứng khi rê chuột vào */
     .shortcuts a:hover {
       background: rgba(255, 255, 255, 0.25);
       border-color: #fff;
-      transform: scale(1.08);
+      transform: scale(1.06);
     }
   </style>
 </head>
 <body>
 
   <div class="top-bar">
-    <div class="greeting-container">
-      <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/chiikawa.gif" alt="pixel-gif">
-      <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/hachiware-bouncing-hachiware-jumping.gif" alt="pixel-gif"> 
-      <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/chiikawa-usagi.gif" alt="pixel-gif"> 
-      <div class="greeting"> Xin chào QKhang / Hoàng Huy</div>
+    <div class="top-left">
+      <div class="greeting-container">
+        <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/chiikawa.gif" alt="pixel-gif">
+        <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/hachiware-bouncing-hachiware-jumping.gif" alt="pixel-gif"> 
+        <img class="greeting-gif" src="https://raw.githubusercontent.com/khangcross/-hu3huy36/refs/heads/main/chiikawa-usagi.gif" alt="pixel-gif"> 
+        <div class="greeting">Xin chào QKhang / Hoàng Huy</div>
+      </div>
     </div>
     
-    <div class="right-info">
-      <div id="date">Thứ 4, ngày 16 tháng 4 năm 2025</div>
+    <div class="top-center">
+      <div id="date"></div>
       <div id="clock">00:00:00</div>
+    </div>
+
+    <div class="top-right">
+      <div id="weather">⏳ Đang tìm vị trí...</div>
     </div>
   </div>
 
@@ -128,6 +152,7 @@
   </div>
 
   <script>
+    // 1. Cập nhật Đồng hồ và Ngày tháng
     function updateClock() {
       const now = new Date();
       const h = now.getHours().toString().padStart(2, '0');
@@ -142,9 +167,46 @@
       document.getElementById('date').textContent = `${weekday}, ngày ${day} tháng ${month} năm ${year}`;
     }
 
-
     setInterval(updateClock, 1000);
     updateClock();
+
+    // 2. Tự động lấy thời tiết thực tế dựa trên tọa độ vị trí trình duyệt
+    function getWeather() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          
+          // Sử dụng API mở mã nguồn lấy dữ liệu thời tiết thực tế
+          fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+            .then(response => response.json())
+            .then(data => {
+              const temp = Math.round(data.current_weather.temperature);
+              const code = data.current_weather.weathercode;
+              
+              // Quy đổi mã thời tiết sang icon trực quan
+              let icon = "☀️";
+              if (code >= 1 && code <= 3) icon = "🌤️";
+              else if (code >= 45 && code <= 48) icon = "🌫️";
+              else if (code >= 51 && code <= 67) icon = "🌧️";
+              else if (code >= 71 && code <= 86) icon = "❄️";
+              else if (code >= 95) icon = "⛈️";
+
+              document.getElementById('weather').textContent = `${icon} ${temp}°C`;
+            })
+            .catch(() => {
+              document.getElementById('weather').textContent = "☁️ 28°C"; // Dự phòng nếu lỗi kết nối mạng
+            });
+        }, () => {
+          document.getElementById('weather').textContent = "📍 Cần bật GPS"; // Khi trình duyệt chặn quyền vị trí
+        });
+      } else {
+        document.getElementById('weather').textContent = "❌ Không hỗ trợ vị trí";
+      }
+    }
+
+    // Chạy hàm lấy thời tiết ngay khi tải trang
+    getWeather();
   </script>
 
 </body>
