@@ -128,32 +128,20 @@
   </div>
 
   <script>
-function updateClock() {
-  const now = new Date();
-  const h = now.getHours();
-  const m = now.getMinutes().toString().padStart(2, '0');
-  const s = now.getSeconds().toString().padStart(2, '0');
-  document.getElementById('clock').textContent = `${h.toString().padStart(2, '0')}:${m}:${s}`;
+    function updateClock() {
+      const now = new Date();
+      const h = now.getHours().toString().padStart(2, '0');
+      const m = now.getMinutes().toString().padStart(2, '0');
+      const s = now.getSeconds().toString().padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}:${s}`;
 
-  const day = now.getDate();
-  const month = now.getMonth() + 1;
-  const year = now.getFullYear();
-  const weekday = ["Chủ Nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"][now.getDay()];
-  document.getElementById('date').textContent = `${weekday}, ngày ${day} tháng ${month} năm ${year}`;
+      const day = now.getDate();
+      const month = now.getMonth() + 1;
+      const year = now.getFullYear();
+      const weekday = ["Chủ Nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"][now.getDay()];
+      document.getElementById('date').textContent = `${weekday}, ngày ${day} tháng ${month} năm ${year}`;
+    }
 
-  // Tự động đổi lời chúc theo giờ
-  let greetingText = "";
-  if (h >= 5 && h < 12) {
-    greetingText = " Chào buổi sáng, QKhang / Hoàng Huy!";
-  } else if (h >= 12 && h < 18) {
-    greetingText = " Buổi chiều năng suất nhé, QKhang / Hoàng Huy!";
-  } else if (h >= 18 && h < 22) {
-    greetingText = " Buổi tối vui vẻ, QKhang / Hoàng Huy!";
-  } else {
-    greetingText = " Muộn rồi, nghỉ ngơi thôi QKhang / Hoàng Huy ơi!";
-  }
-  document.querySelector('.greeting').textContent = greetingText;
-}
 
     setInterval(updateClock, 1000);
     updateClock();
