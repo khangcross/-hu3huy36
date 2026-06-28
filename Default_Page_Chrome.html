@@ -53,19 +53,20 @@
     }
 
     /* ĐÃ SỬA: Thu nhỏ chữ ngày tháng xuống 14px */
-   #date {
+  #date {
       margin-bottom: 2px;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.7); /* Màu trắng mờ tinh tế */
+      color: rgba(255, 255, 255, 0.7); 
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 0px 0px 5px rgba(0, 0, 0, 0.8);
     }
 
+    /* Đồng hồ: Trắng tinh khiết, cỡ chữ nổi bật, đổ bóng kép (Double Shadow) siêu dày */
     #clock {
       font-size: 24px; 
-      color: #ffffff; /* Đồng hồ màu trắng tinh khiết */
-      /* Bóng đổ màu hồng tím dịu nhẹ giúp tạo hiệu ứng phát sáng lạ mắt */
-      text-shadow: 0 0 4px #ff99cc, 0 0 10px #ff66aa, 2px 2px 3px #000; 
+      color: #ffffff; 
+      /* Đổ bóng 2 lớp giúp chữ luôn luôn nổi bần bật dù bạn có thay nền trắng tinh đi chăng nữa */
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.7);
     }
-
     /* Khu vực thời tiết ở góc phải cũ */
     .top-right {
       text-align: right;
