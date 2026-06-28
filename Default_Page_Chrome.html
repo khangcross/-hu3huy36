@@ -78,14 +78,15 @@
     }
 
     /* Giữ nguyên vị trí layout shortcuts ban đầu của bạn */
+    /* Giữ nguyên vị trí layout shortcuts ban đầu của bạn và không bị cuộn trang */
     .shortcuts {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 12px;
       max-width: 650px;
-      margin: 30px auto;
+      margin: 0 auto; /* Đổi về 0 auto để không bị đẩy tràn màn hình */
       text-align: center;
-      padding-top: 16cm; 
+      padding-top: 16cm; /* Quay lại dùng padding-top như code gốc của bạn để cố định vị trí */
     }
 
     /* Làm mới các ô chứa link cho sắc nét và đổi font */
