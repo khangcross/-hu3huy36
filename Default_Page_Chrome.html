@@ -16,7 +16,7 @@
     .top-bar {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Đã sửa: Căn giữa theo chiều dọc để không bị khuất chữ */
+      align-items: center; 
       padding: 20px 30px 0;
     }
 
@@ -32,14 +32,16 @@
       gap: 8px;
     }
 
+    /* ĐÃ SỬA: Thu nhỏ chữ Xin chào xuống 16px */
     .greeting {
-      font-size: 22px; /* Tăng size phù hợp với font mới */
+      font-size: 16px; 
       text-shadow: 2px 2px 3px #000;
       white-space: nowrap;
     }
 
+    /* ĐÃ SỬA: Thu nhỏ các ảnh GIF xuống 26px để cân bằng với cỡ chữ */
     .greeting-gif {
-      width: 32px; 
+      width: 26px; 
       height: auto;
     }
 
@@ -50,14 +52,16 @@
       line-height: 1.3;
     }
 
+    /* ĐÃ SỬA: Thu nhỏ chữ ngày tháng xuống 14px */
     #date {
       margin-bottom: 2px;
-      font-size: 20px;
+      font-size: 14px;
       color: #e0e0e0;
     }
 
+    /* ĐÃ SỬA: Thu nhỏ đồng hồ xuống 24px */
     #clock {
-      font-size: 32px; /* Đồng hồ to rõ ràng ở chính giữa */
+      font-size: 24px; 
       color: #00ffcc; 
     }
 
@@ -67,8 +71,9 @@
       text-shadow: 2px 2px 3px #000;
     }
 
+    /* ĐÃ SỬA: Thu nhỏ thời tiết xuống 16px cho đồng bộ với góc trái */
     #weather {
-      font-size: 22px;
+      font-size: 16px;
       color: #ffcc66;
     }
 
@@ -91,7 +96,7 @@
       border: 1px solid rgba(255, 255, 255, 0.25); 
       padding: 12px 5px;
       border-radius: 8px;
-      font-size: 18px; /* Kích cỡ chữ vừa mắt với font VT323 */
+      font-size: 18px; 
       transition: 0.25s;
       display: flex;
       justify-content: center;
@@ -177,14 +182,12 @@
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
           
-          // Sử dụng API mở mã nguồn lấy dữ liệu thời tiết thực tế
           fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
             .then(response => response.json())
             .then(data => {
               const temp = Math.round(data.current_weather.temperature);
               const code = data.current_weather.weathercode;
               
-              // Quy đổi mã thời tiết sang icon trực quan
               let icon = "☀️";
               if (code >= 1 && code <= 3) icon = "🌤️";
               else if (code >= 45 && code <= 48) icon = "🌫️";
@@ -195,17 +198,16 @@
               document.getElementById('weather').textContent = `${icon} ${temp}°C`;
             })
             .catch(() => {
-              document.getElementById('weather').textContent = "☁️ 28°C"; // Dự phòng nếu lỗi kết nối mạng
+              document.getElementById('weather').textContent = "☁️ 28°C"; 
             });
         }, () => {
-          document.getElementById('weather').textContent = "📍 Cần bật GPS"; // Khi trình duyệt chặn quyền vị trí
+          document.getElementById('weather').textContent = "📍 Cần bật GPS"; 
         });
       } else {
         document.getElementById('weather').textContent = "❌ Không hỗ trợ vị trí";
       }
     }
 
-    // Chạy hàm lấy thời tiết ngay khi tải trang
     getWeather();
   </script>
 
